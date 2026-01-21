@@ -1,16 +1,31 @@
-# React + Vite
+Creating the TaskList Component:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this step, we will build the TaskList component, which will be responsible for displaying the list of tasks.
+The TaskList component will receive the tasks as a prop and render them dynamically, showing each task's
+name, priority, category, and completion status. It will also allow users to mark tasks as complete or delete
+them.
 
-Currently, two official plugins are available:
+Creating the TaskList Component:
+In the TaskList.jsx file, we will create a component that displays each task along with options to mark it as
+complete or delete it.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Explanation of TaskList:
+1. Props:
+• tasks : An array of tasks passed from the App.js component.
+• toggleComplete : A function to marka task as complete or undo it
+• delete Task : A function to delete a task from the list.
 
-## React Compiler
+2. Rendering Tasks:
+• The TaskList component maps over the tasks array and renders each task's name, priority, and
+ca tegory.
+• If the task is marked as complete, it will be displayed with a completed class (which can be styled to
+show a strikethrough or change color).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Actions:
+• Complete/Undo Button: This button toggles the task's completion status. If the task is completed, it
+shows "Undo"; otherwise, it shows "Complete".
+• Delete Button: This button deletes the task from the list.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Conditional Rendering:
+• If there are no tasks, it shows a message: "No tasks available. Add some tasks!"
+• If tasks exist, it maps over the tasks array and renders each task with the provided details.
